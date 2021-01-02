@@ -23,7 +23,7 @@ agent = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537
 
 ip  = args.target
 
-api2 = "https://ipapi.co/"  # NOT WORKING
+api2 = "https://ipapi.co/" 
 
 api = "http://ip-api.com/json/"
 
@@ -31,17 +31,14 @@ apic = "?fields=status,message,continent,continentCode,country,countryCode,regio
 
 ipv4 = "https://ifconfig.me/all.json"
 
-#               ipv6 = "https://ip6.seeip.org/json"   SHIT API
-
 coun = "https://api.myip.com/"
 
 opmap = "https://www.openstreetmap.org/#map=8/"
 
 try:
         data = requests.get(api+ip+apic, headers=agent ).json()
-        data2 = requests.get(api2+ip+"/json/", headers=agent).json() # Not Working
+        data2 = requests.get(api2+ip+"/json/", headers=agent).json() 
         ipv4 = requests.get(ipv4, headers=agent).json()
-        #               ipv6 = requests.get(ipv6, headers=agent).json()                 Fucking api not working...
         coun = requests.get(coun, headers=agent).json()
         a432 = requests.get(api+ipv4['ip_addr']+apic, headers=agent).json()
         sys.stdout.flush()
@@ -66,7 +63,6 @@ try:
         print(" "+clear)
         print(gray1, "What they can see about you"  )
         print(yell, "Your Public IPV4:", ipv4['ip_addr'])
-        #               print(yell, "Your Public IPV6:", ipv6['ip'])                   Fucking api not working
         print(blue, "Your Country:", coun['country'])
         print(blue, "ISP:", a432['isp'])
         print(blue, "Reverse:", a432['reverse'])
@@ -74,7 +70,6 @@ try:
         print(blue, "Latitude:", a432['lat'])
         print(blue, "Longitude:", a432['lon'])
         print(blue, "Map:", opmap+str(a432['lat'])+"/"+str(a432['lon']))
-        #               print(yell, "Useragent:", ipv4['user_agent'])                  Useragent test
 
 except KeyboardInterrupt:
         print('User requested exit'+clear)
