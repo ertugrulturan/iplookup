@@ -45,7 +45,7 @@ try:
         blue = lightblue+bold+"[➛]"
         yell = yellow+bold+"[➛]"
         gray1 = gray+bold+"[↷]"
-        print("Coders: https://obir.ninja/")
+        print("Coders: WWW.LAYER.WEB.TR")
         print(yell, "Target:", data['query'])
         print(yell, "Lookup Status:", data['status'])
         print(blue, "ISP:", data['isp'])
